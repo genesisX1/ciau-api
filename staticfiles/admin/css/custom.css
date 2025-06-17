@@ -1,0 +1,18 @@
+:root {
+    --primary: #1c7ed6;
+    --secondary: #f1f3f5;
+}
+
+.navbar, .brand-link {
+    background-color: #1c7ed6 !important;
+}
+
+.brand-link .brand-text {
+    font-weight: bold;
+    font-size: 18px;
+    color: white !important;
+}
+
+.content-wrapper {
+    background: #f9fbfd;
+}

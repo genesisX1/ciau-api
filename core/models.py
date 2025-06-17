@@ -17,6 +17,7 @@ class CustomUser(AbstractUser):
     )  # Tous les utilisateurs ici seront admin
 
 
+
 class BlogPost(models.Model):
     title = models.CharField(max_length=255)
     content = models.TextField()
@@ -66,7 +67,7 @@ class MediaFile(models.Model):
     blank=True  # ✅ Permet de laisser vide dans les formulaires/admin
 )
     title = models.CharField(max_length=255, default="Sans titre")
-    file = models.FileField(upload_to='uploads/')
+    file = models.FileField(upload_to='media/')
     uploaded_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

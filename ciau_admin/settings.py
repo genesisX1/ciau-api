@@ -70,9 +70,9 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
-    'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',  # Restreindre l'accès aux utilisateurs connectés
-    ),
+    # 'DEFAULT_PERMISSION_CLASSES': (
+    #     'rest_framework.permissions.IsAuthenticated',  # Restreindre l'accès aux utilisateurs connectés
+    # ),
 }
 
 
@@ -100,9 +100,11 @@ WSGI_APPLICATION = 'ciau_admin.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://ciau_db_user:EgRP9LJVdgm6JC5DUgm7NuXawcTKBAr7@dpg-d035uk3uibrs73bf60f0-a.frankfurt-postgres.render.com/ciau_db")
+
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.getenv('DATABASE_URL'),
+        default=DATABASE_URL,
         conn_max_age=600,
         conn_health_checks=True,
     )
@@ -127,24 +129,31 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-JAZZMIN_SETTINGS = {
-    "site_title": "Ciau Admin",
-    "site_header": "Ciau Architecture",
-    "site_brand": "Ciau",
-    "welcome_sign": "Bienvenue sur votre espace d’administration",
-    "theme": "flatly",  # flatly, darkly, etc.
-    "custom_css": "admin/css/custom.css",  # pour un thème Notion-like
-    "custom_js": "admin/js/custom.js",
-    "show_sidebar": True,
-    "navigation_expanded": True,
-}
+# JAZZMIN_SETTINGS = {
+#     "site_title": "Ciau Admin",
+#     "site_header": "Ciau Architecture",
+#     "site_brand": "Ciau",
+#     "welcome_sign": "Bienvenue sur votre espace d’administration",
+#     "theme": "flatly",  # flatly, darkly, etc.
+#     "custom_css": "admin/css/custom.css",  # pour un thème Notion-like
+#     "custom_js": "admin/js/custom.js",
+#     "show_sidebar": True,
+#     "navigation_expanded": True,
+
+#     "hide_apps": [
+#         # 'auth',
+#         "authtoken",
+#         "token_blacklist",
+#     ],
+# }
+
 
 
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'fr-fr'
 
 TIME_ZONE = 'UTC'
 
