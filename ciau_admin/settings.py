@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'default_secret_key')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ['ciau-api.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['ciau-api-production.up.railway.app', 'localhost', '127.0.0.1']
 
 
 # Application definition
